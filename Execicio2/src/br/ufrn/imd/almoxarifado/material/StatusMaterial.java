@@ -1,21 +1,16 @@
 package br.ufrn.imd.almoxarifado.material;
 
-public class StatusMaterial {
-	private int ativo;
-	private int inativo;
+public enum StatusMaterial {
+	ATIVO(1),
+	INATIVO(2);
 	
-	public int getAtivo() {
-		return ativo;
-	}
-	public void setAtivo(int ativo) {
-		this.ativo = ativo;
-	}
-	public int getInativo() {
-		return inativo;
-	}
-	public void setInativo(int inativo) {
-		this.inativo = inativo;
-	}
+	private int opcao;
 	
+	StatusMaterial(int valorOpcao){
+		this.opcao = valorOpcao;
+	}
+	public int getOpcao() {
+		return opcao;
+	}
 
 }
