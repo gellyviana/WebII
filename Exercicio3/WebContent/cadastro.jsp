@@ -9,6 +9,7 @@
 <body>
 
 	<form action="cadastrar" method="post"> 
+		<h1>Cadastro</h1>
 		<fieldset> 
 			<p> <input type="text" name="nome" placeholder="nome"/>  </p>
 			<p> <input type="text" name="login" placeholder="usuario"/>  </p>

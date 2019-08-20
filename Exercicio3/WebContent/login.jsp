@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="logar" method="post"> 
-		<h1>Bem vindo</h1>
+		<h1>Bem vindo - Login</h1>
 		<fieldset> 
 			<p> <input type="text" name="login" placeholder="usuario"/>  </p>
 			<p> <input type="password" name="senha" placeholder="senha"/>  </p>
