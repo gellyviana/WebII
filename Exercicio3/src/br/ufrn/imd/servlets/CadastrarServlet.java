@@ -12,6 +12,8 @@ import br.ufrn.imd.dominio.Usuario;
 
 /**
  * Servlet implementation class CadastroServlet
+ * @author Gelly Viana Mota
+ * Classe servlet responsavel Controller de Cadastro
  */
 @WebServlet("/cadastrar")
 public class CadastrarServlet extends HttpServlet {
@@ -29,6 +31,9 @@ public class CadastrarServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 
+	/*
+	 * Recebe os dados de usuario no cadastro, vindos do metodo Post
+	 */
 		String senha = req.getParameter("senha");
 		String login = req.getParameter("login");
 		String nome = req.getParameter("nome");

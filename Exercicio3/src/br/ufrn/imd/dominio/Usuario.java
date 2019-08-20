@@ -1,5 +1,8 @@
 package br.ufrn.imd.dominio;
-
+/*
+ * @author Gelly Viana Mota
+ * Classe responsavel em capturar dados do usuario
+ */
 public class Usuario {
 	private String login;
 	private String senha;
