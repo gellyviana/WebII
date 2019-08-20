@@ -35,10 +35,16 @@ public class LoginServlet extends HttpServlet{
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
 		
+		if(usuarios.isEmpty()) {
+			resp.sendRedirect("/Exercicio3/cadastro.jsp");
+			return;
+		}
+		
 		for(Usuario u: usuarios) {
 			if(u.getLogin().equals(login) && u.getSenha().equals(senha)) {
 				req.getSession().setAttribute("usuario", u);
 				resp.sendRedirect("/Exercicio3/Paginas"+"/Conteudo.jsp");
+				return;
 			}
 		}
 		
