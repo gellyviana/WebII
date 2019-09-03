@@ -2,13 +2,17 @@ package br.ufrn.imd.material.controllers;
 
 import java.io.Serializable;
 
+import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import br.ufrn.imd.material.dominio.Material;
 import br.ufrn.imd.material.repositorios.MaterialRepositorio;
 
+@Named
+@SessionScoped
 public class MaterialMBean implements Serializable{
 
 	/**
@@ -33,17 +37,13 @@ public class MaterialMBean implements Serializable{
 		this.material = material;
 	}
 
-	public DataModel<Material> getMaterialModel() {
+	public DataModel<Material> getMateriaisModel() {
 		return materiaisModel;
 	}
 
-
-
-	public void setMaterialModel(DataModel<Material> materialModel) {
-		this.materiaisModel = materialModel;
+	public void setMateriaisModel(DataModel<Material> materiaisModel) {
+		this.materiaisModel = materiaisModel;
 	}
-
-
 
 	public UsuarioMBean getUsuarioMBean() {
 		return usuarioMBean;
@@ -62,13 +62,14 @@ public class MaterialMBean implements Serializable{
 		return "/pages/material/form.jsf";
 	}
 	
-	public String listaMaterial() {
+	public String listarMaterial() {
 		materiaisModel = new ListDataModel<Material>(MaterialRepositorio.listaMateriais());
 		return "/pages/material/list.jsf";
 	}
 	
 	public String cadastrarMaterial() {
 		material.setUsuarioCadastro(usuarioMBean.getUsuarioLogado());
+		MaterialRepositorio.adicionar(material);
 		material = new Material();
 		return "/pages/material/form.jsf";
 	}

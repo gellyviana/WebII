@@ -27,7 +27,7 @@ public class SegurancaFilter implements Filter{
 				req.getSession().getAttribute("usuarioLogado");
 		
 		if(usuarioLogado == null) {
-			res.sendRedirect("/aulajsf/index.jsf");
+			res.sendRedirect("/Materialjsf/index.jsf");
 		}else {
 			chain.doFilter(request, response);
 		}

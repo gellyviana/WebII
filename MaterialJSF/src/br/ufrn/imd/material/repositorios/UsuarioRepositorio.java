@@ -13,8 +13,8 @@ public class UsuarioRepositorio {
 		if(usuarios == null) {
 			usuarios = new ArrayList<Usuario>();
 			Usuario user = new Usuario();
-			user.setNome("Gelly");
-			user.setLogin("Gelly");
+			user.setNome("gvm");
+			user.setLogin("gvm");
 			user.setSenha("gvm");
 			usuarios.add(user);
 		}

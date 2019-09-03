@@ -12,7 +12,6 @@ import br.ufrn.imd.material.repositorios.UsuarioRepositorio;
 
 @Named("usuarioMBean")
 @SessionScoped
-
 public class UsuarioMBean implements Serializable{
 	
 	/**
