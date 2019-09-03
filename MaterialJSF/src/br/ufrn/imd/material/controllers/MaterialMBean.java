@@ -9,6 +9,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.ufrn.imd.material.dominio.Material;
+import br.ufrn.imd.material.dominio.StatusMaterial;
+import br.ufrn.imd.material.repositorios.ClassificacaoMaterialRepositorio;
 import br.ufrn.imd.material.repositorios.MaterialRepositorio;
 
 @Named
@@ -49,13 +51,9 @@ public class MaterialMBean implements Serializable{
 		return usuarioMBean;
 	}
 
-
-
 	public void setUsuarioMBean(UsuarioMBean usuarioMBean) {
 		this.usuarioMBean = usuarioMBean;
 	}
-
-
 
 	public String novoMaterial() {
 		material = new Material();
@@ -80,4 +78,6 @@ public class MaterialMBean implements Serializable{
 		materiaisModel = new ListDataModel<Material>(MaterialRepositorio.listaMateriais());
 		return "/pages/material/list.jsf";
 	}
+	
+	
 }

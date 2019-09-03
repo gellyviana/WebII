@@ -16,6 +16,10 @@ import br.ufrn.imd.material.repositorios.MaterialRepositorio;
 @Named
 @SessionScoped
 public class ClassificacaoMaterialMBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ClassificacaoMaterial classificacaoMaterial;
 	private DataModel<ClassificacaoMaterial> classificacaoMaterialModel;
 	@Inject
@@ -54,9 +58,9 @@ public class ClassificacaoMaterialMBean implements Serializable{
 		return "/pages/material/formclassificacaomaterial.jsf";
 	}
 	
-	public String listarclassificacaoMateriais() {
+	public String listarclassificacaoMaterial() {
 		classificacaoMaterialModel = new ListDataModel<ClassificacaoMaterial>(ClassificacaoMaterialRepositorio.listclassificacaoMaterial());
-		return "/pages/classificacaomaterial.list.jsf";
+		return "/pages/material/listclassificacaomaterial.jsf";
 	}
 	
 	public String cadastrarclassificacaoMaterial() {

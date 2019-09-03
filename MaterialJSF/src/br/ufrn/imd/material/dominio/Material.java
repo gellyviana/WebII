@@ -9,6 +9,9 @@ public class Material {
 	private String descricao;
 	private Date dataCadastro;
 	private Usuario usuarioCadastro;
+	private ClassificacaoMaterial classificacaoMaterial;
+	private GrupoMaterial grupoMaterial;
+	
 	
 	public int getId() {
 		return id;
@@ -39,6 +42,19 @@ public class Material {
 	}
 	public void setUsuarioCadastro(Usuario usuarioCadastro) {
 		this.usuarioCadastro = usuarioCadastro;
+	}
+	
+	public ClassificacaoMaterial getClassificacaoMaterial() {
+		return classificacaoMaterial;
+	}
+	public void setClassificacaoMaterial(ClassificacaoMaterial classificacaoMaterial) {
+		this.classificacaoMaterial = classificacaoMaterial;
+	}
+	public GrupoMaterial getGrupoMaterial() {
+		return grupoMaterial;
+	}
+	public void setGrupoMaterial(GrupoMaterial grupoMaterial) {
+		this.grupoMaterial = grupoMaterial;
 	}
 	
 }
