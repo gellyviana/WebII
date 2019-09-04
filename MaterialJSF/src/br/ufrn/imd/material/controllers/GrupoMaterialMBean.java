@@ -14,6 +14,10 @@ import br.ufrn.imd.material.repositorios.GrupoMaterialRepositorio;
 @Named
 @SessionScoped
 public class GrupoMaterialMBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private GrupoMaterial grupoMaterial;
 	private DataModel<GrupoMaterial> grupoMaterialModel;
 	@Inject
@@ -46,9 +50,9 @@ public class GrupoMaterialMBean implements Serializable{
 		return "/pages/material/formgrupomaterial.jsf";
 	}
 	
-	public String listargrupoMateriais() {
+	public String listargrupoMaterial() {
 		grupoMaterialModel = new ListDataModel<GrupoMaterial>(GrupoMaterialRepositorio.listgrupoMaterial());
-		return "/pages/grupomaterial.list.jsf";
+		return "/pages/material/listgrupomaterial.jsf";
 	}
 	
 	public String cadastrargrupoMaterial() {

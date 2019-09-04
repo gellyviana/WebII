@@ -7,14 +7,10 @@
 		<h4>Listagem do grupo material - <h:outputText value="#{usuarioMBean.usuarioLogado.login}"/></h4>
 		
 		<h:form>
-			<h:dataTable value="#{grupoMaterialMBean.classificacaoMaterialModel}" var="grupoMaterial">
+			<h:dataTable value="#{grupoMaterialMBean.grupoMaterialModel}" var="grupoMaterial">
 				<h:column>
 					<f:facet name="header">Código</f:facet>
 					<h:outputText value="#{grupoMaterial.codigo}"/>
-				</h:column>
-				<h:column>
-					<f:facet name="header">Tipo</f:facet>
-					<h:outputText value="#{grupoMaterial.tipo}"/>
 				</h:column>
 				<h:column>
 					<f:facet name="header">Nome</f:facet>
@@ -32,7 +28,7 @@
 					<h:commandButton action="#{grupoMaterialMBean.removergrupoMaterial}" value="Remover"/>
 				</h:column>
 			</h:dataTable>
-			<h:commandButton action="#{grupoMaterialMBean.novagrupoMaterial}" value="Novo cadastro"/>
+			<h:commandButton action="#{grupoMaterialMBean.novogrupoMaterial}" value="Novo cadastro"/>
 		</h:form>
 	</ui:define>
 </ui:composition>
