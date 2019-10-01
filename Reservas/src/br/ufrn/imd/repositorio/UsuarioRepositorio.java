@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import br.ufrn.imd.dominio.Usuario;
 
+
 @Stateless
 public class UsuarioRepositorio {
 	
@@ -25,6 +26,13 @@ public class UsuarioRepositorio {
 		}catch(NoResultException e) {
 			return null;
 		}
+	}
+	public Usuario novoUsuario(Usuario usuario) {
+		if(usuario.getId() == 0)
+			em.persist(usuario);
+		else
+			em.merge(usuario);
+		return usuario;
 	}
 
 }

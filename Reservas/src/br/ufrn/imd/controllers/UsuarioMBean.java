@@ -58,4 +58,14 @@ public class UsuarioMBean implements Serializable{
 			return null;
 		}
 	}
+	
+	public String novousuario() {
+		
+		//return "/pages/usuario/novousuario.jsf";
+		
+		//usuario.setUsuarioCadastro(usuarioMBean.getUsuarioLogado());
+		usuarioRepositorio.novoUsuario(usuario);
+		usuario = new Usuario();
+		return "/pages/usuario/novousuario.jsf";
+	}
 }

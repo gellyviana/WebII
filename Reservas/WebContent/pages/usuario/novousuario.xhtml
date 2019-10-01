@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/include/template.xhtml">
+
+	<ui:define name="conteudo">
+	<h4>Operações - <h:outputText value="#{usuarioMBean.usuarioLogado.login}"/></h4>
+		<h:form>
+			<fieldset>
+				<p> Nome </p> <p> <h:inputText value="#{usuarioMBean.usuario.nome}" required="false"
+					requiredMessage="Código obrigatório"/>
+				</p>
+				<p> CPF</p> <p> <h:inputText value="#{usuarioMBean.usuario.id}"/> </p>
+				<p> Login </p> <p> <h:inputText value="#{usuarioMBean.usuario.login}"/> </p>
+				<p> Senha </p> <p> <h:inputText value="#{usuarioMBean.usuario.senha}"/> </p>
+			</fieldset>
+			<p> <h:commandButton action = "#{usuarioMBean.novousuario}"
+			value="Cadastrar Usuário"/></p>
+			<p> <h:commandButton action = "#{usuarioMBean.listusuario}"
+			value="Listar Usuários"/></p>
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
