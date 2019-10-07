@@ -11,13 +11,13 @@
 				<p> Nome </p> <p> <h:inputText value="#{usuarioMBean.usuario.nome}" required="false"
 					requiredMessage="Código obrigatório"/>
 				</p>
-				<p> CPF</p> <p> <h:inputText value="#{usuarioMBean.usuario.id}"/> </p>
+				<p> CPF</p> <p> <h:inputText value="#{usuarioMBean.usuario.cpf}"/> </p>
 				<p> Login </p> <p> <h:inputText value="#{usuarioMBean.usuario.login}"/> </p>
 				<p> Senha </p> <p> <h:inputText value="#{usuarioMBean.usuario.senha}"/> </p>
 			</fieldset>
 			<p> <h:commandButton action = "#{usuarioMBean.novousuario}"
 			value="Cadastrar Usuário"/></p>
-			<p> <h:commandButton action = "#{usuarioMBean.listusuario}"
+			<p> <h:commandButton action = "#{usuarioMBean.listUsuario}"
 			value="Listar Usuários"/></p>
 		</h:form>
 		

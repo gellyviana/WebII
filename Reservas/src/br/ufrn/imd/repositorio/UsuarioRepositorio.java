@@ -1,15 +1,20 @@
 package br.ufrn.imd.repositorio;
 
 
+import java.util.List;
+
 import javax.ejb.Stateless;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import br.ufrn.imd.dominio.Usuario;
 
 
+@Named
 @Stateless
 public class UsuarioRepositorio {
 	
@@ -27,12 +32,34 @@ public class UsuarioRepositorio {
 			return null;
 		}
 	}
+	
+	@Transactional
 	public Usuario novoUsuario(Usuario usuario) {
-		if(usuario.getId() == 0)
-			em.persist(usuario);
-		else
-			em.merge(usuario);
+		em.persist(usuario);
 		return usuario;
+	}
+	
+	@Transactional
+	public void remover(Usuario usuarioRemovido) {
+		usuarioRemovido = em.find(Usuario.class, usuarioRemovido.getId());
+		em.remove(usuarioRemovido);
+		
+	}
+	@Transactional
+	@SuppressWarnings("unchecked")
+	public List<Usuario> listaUsuario() {
+		return (List<Usuario>)em.createQuery("from Usuario").getResultList();
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+

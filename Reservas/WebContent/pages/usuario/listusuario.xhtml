@@ -6,7 +6,35 @@
 
 	<ui:define name="conteudo">
 			
-		<h4> Lista Usuários - <h:outputText value="#{usuarioMBean.usuarioLogado.login}" /> </h4>
+		<h4> Lista Usuários - <h:outputText value="#{usuarioMBean.usuarioLogado.login}" /></h4>
+		<h:form>
+			<h:dataTable value="#{usuarioMBean.usuarioModel}" var="usuario">
+				<h:column>
+    				<f:facet name="header">CPF</f:facet>
+    				<h:outputText value="#{usuario.cpf}"/>
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Nome</f:facet>
+    				<h:outputText value="#{usuario.nome}"/>
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Login</f:facet>
+    				<h:outputText value="#{usuario.login}" >
+    				</h:outputText>
+    			</h:column>
+    						
+    			<h:column>
+					<h:commandButton 
+					action="#{usuarioMBean.removerUsuario}"
+					 value="Remover" />
+    			</h:column>
+			</h:dataTable>
+			
+			<h:commandButton action="#{usuarioMBean.novousuario}" 
+			value="Novo cadastro" />
+		</h:form>
 		
 	</ui:define>
 </ui:composition>

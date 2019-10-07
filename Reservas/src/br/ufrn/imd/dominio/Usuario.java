@@ -1,5 +1,6 @@
 package br.ufrn.imd.dominio;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,18 +21,29 @@ public class Usuario {
 	@SequenceGenerator(name="SEQ_USUARIO", sequenceName="id_seq_usuario", allocationSize=1)
 	
 	private int id;
+	@Column(unique=true)
+	private String cpf;
 	private String login;
 	private String senha;
 	private String nome;
 	
 	public Usuario() {}
 	
-	public Usuario(int id, String login, String senha, String nome) {
-		this.id = id;
+	public Usuario(String cpf, String login, String senha, String nome) {
+		this.cpf = cpf;
 		this.login = login;
 		this.senha = senha;
 		this.nome = nome;
 	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 
 	public int getId() {
 		return id;
