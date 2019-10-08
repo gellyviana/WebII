@@ -24,6 +24,7 @@ public class UsuarioMBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Usuario usuario;
 	private Usuario usuarioLogado;
+	private Usuario usuarioTmp;
 	private DataModel<Usuario> usuarioModel;
 
 	@Inject
@@ -84,12 +85,25 @@ public class UsuarioMBean implements Serializable{
 		return listUsuario();
 	}
 	
+	public String searchUser() {
+		usuarioTmp = usuarioRepositorio.findByID(usuario.getCpf());
+		return "/pages/usuario/editarusuario.jsf";
+	}
+	
 	public DataModel<Usuario> getUsuarioModel() {
 		return usuarioModel;
 	}
 
 	public void setUsuarioModel(DataModel<Usuario> usuarioModel) {
 		this.usuarioModel = usuarioModel;
+	}
+
+	public Usuario getUsuarioTmp() {
+		return usuarioTmp;
+	}
+
+	public void setUsuarioTmp(Usuario usuarioTmp) {
+		this.usuarioTmp = usuarioTmp;
 	}
 
 }

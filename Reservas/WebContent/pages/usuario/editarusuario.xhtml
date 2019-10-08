@@ -6,7 +6,20 @@
 
 	<ui:define name="conteudo">
 			
-		<h4> Editar Cadastro - <h:outputText value="#{usuarioMBean.usuarioLogado.login}" /> </h4>
-		
+		<h4> Buscar Usuário - <h:outputText value="#{usuarioMBean.usuarioLogado.login}" /> </h4>
+		<h:form>
+			<fieldset>
+				<p> CPF</p> <p> <h:inputText required="false"
+					requiredMessage="Código obrigatório"/> 
+					<h:commandButton action = "#{usuarioMBean.searchUser}"
+					value="Buscar Usuário"/>
+					</p>
+			</fieldset>
+		</h:form>
+		<fieldset>
+				<p> Nome </p> <p> <h:outputText value="#{usuarioMBean.usuarioTmp.nome}"/> </p>
+				<p> CPF</p> <p> <h:outputText value="#{usuarioMBean.usuarioTmp.cpf}"/> </p>
+				<p> Login </p> <p> <h:outputText value="#{usuarioMBean.usuarioTmp.login}"/> </p>
+		</fieldset>		
 	</ui:define>
 </ui:composition>

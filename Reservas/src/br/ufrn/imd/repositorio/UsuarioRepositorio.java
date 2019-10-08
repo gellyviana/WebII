@@ -50,6 +50,20 @@ public class UsuarioRepositorio {
 	public List<Usuario> listaUsuario() {
 		return (List<Usuario>)em.createQuery("from Usuario").getResultList();
 	}
+	
+	@Transactional
+	public Usuario findByID(String cpf) {
+		String jpaql = "Select u.cpf From Usuario u Where u.cpf := cpf";
+		Query query = em.createQuery(jpaql);
+		query.setParameter("cpf", cpf);
+		
+		try {
+			return (Usuario)query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+	
 
 }
 
