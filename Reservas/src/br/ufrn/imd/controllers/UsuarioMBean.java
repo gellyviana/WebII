@@ -18,6 +18,7 @@ import br.ufrn.imd.repositorio.UsuarioRepositorio;
 @SessionScoped
 public class UsuarioMBean implements Serializable{
 	
+	
 	/**
 	 * 
 	 */
@@ -83,6 +84,12 @@ public class UsuarioMBean implements Serializable{
 		usuarioRepositorio.remover(usuarioRemovido);
 		usuarioModel = new ListDataModel<Usuario>(usuarioRepositorio.listaUsuario());
 		return listUsuario();
+	}
+	
+	public String removeUmUsuario() {
+		usuarioTmp = usuarioRepositorio.findByID(usuario.getCpf());
+		usuarioRepositorio.remover(usuarioTmp);
+		return "/pages/usuario/deletausuario.jsf";
 	}
 	
 	public String searchUser() {

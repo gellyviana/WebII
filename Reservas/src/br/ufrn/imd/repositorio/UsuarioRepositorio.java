@@ -53,7 +53,7 @@ public class UsuarioRepositorio {
 	
 	@Transactional
 	public Usuario findByID(String cpf) {
-		String jpaql = "Select u.cpf From Usuario u Where u.cpf := cpf";
+		String jpaql = "select u from Usuario u where u.cpf = :cpf";
 		Query query = em.createQuery(jpaql);
 		query.setParameter("cpf", cpf);
 		

@@ -9,11 +9,10 @@
 		<h4> Buscar Usuário - <h:outputText value="#{usuarioMBean.usuarioLogado.login}" /> </h4>
 		<h:form>
 			<fieldset>
-				<p> CPF</p> <p> <h:inputText required="false"
-					requiredMessage="Código obrigatório"/> 
+				<p> CPF</p> <p> <h:inputText value="#{usuarioMBean.usuario.cpf}" requiredMessage="Código obrigatório" />
 					<h:commandButton action = "#{usuarioMBean.searchUser}"
 					value="Buscar Usuário"/>
-					</p>
+				</p>
 			</fieldset>
 		</h:form>
 		<fieldset>
