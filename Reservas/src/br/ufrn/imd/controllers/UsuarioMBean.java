@@ -89,7 +89,7 @@ public class UsuarioMBean implements Serializable{
 	public String removeUmUsuario() {
 		usuarioTmp = usuarioRepositorio.findByID(usuario.getCpf());
 		usuarioRepositorio.remover(usuarioTmp);
-		return "/pages/usuario/deletausuario.jsf";
+		return "/pages/usuario/deletarusuario.jsf";
 	}
 	
 	public String searchUser() {

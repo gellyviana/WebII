@@ -16,9 +16,10 @@
 			</fieldset>
 		</h:form>
 		<fieldset>
-				<p> Nome </p> <p> <h:outputText value="#{usuarioMBean.usuarioTmp.nome}"/> </p>
-				<p> CPF</p> <p> <h:outputText value="#{usuarioMBean.usuarioTmp.cpf}"/> </p>
-				<p> Login </p> <p> <h:outputText value="#{usuarioMBean.usuarioTmp.login}"/> </p>
+		<H4>Usuário Buscado:</H4>
+				<p> Nome: <h:outputText value="#{usuarioMBean.usuarioTmp.nome}"/> </p>
+				<p> CPF: <h:outputText value="#{usuarioMBean.usuarioTmp.cpf}"/> </p>
+				<p> Login: <h:outputText value="#{usuarioMBean.usuarioTmp.login}"/> </p>
 		</fieldset>		
 	</ui:define>
 </ui:composition>
